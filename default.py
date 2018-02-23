@@ -13,8 +13,8 @@ import random
 
 mail = Mail()
 mail.settings.server = 'smtp.gmail.com:587'
-mail.settings.sender = 'phuongng2112@gmail.com'
-mail.settings.login = 'phuongng2112@gmail.com:pfdjczktasksivys'
+mail.settings.sender = ''
+mail.settings.login = ''
 
 def index():
     """
