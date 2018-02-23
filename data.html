@@ -1,0 +1,43 @@
+{{extend 'layout.html'}}
+
+<a href="http://kruschev.pythonanywhere.com/welcome/default/">Back</a>
+
+{{=form}}
+<p>Or perform a content search:</p>
+<form>
+<input name="search_db" />
+<input type="submit" value="Search" />
+</form>
+
+{{x=results}}
+{{if x != " ":}}
+{{for row in x:}}
+{{=LI(A(row.title, _href=URL('data', args=row.id)))}}
+{{pass}}
+{{pass}}
+
+<h3><font color="Maroon">{{=disp_title}}</font></h3>
+<h6><i>{{=disp_prompt}}</i></h6>
+{{=XML(disp_body.replace('\n','<br>'),sanitize=True)}}
+
+{{=HR()}}
+
+{{=cmt_box}}
+{{y=disp_cmt}}
+{{if y != "" and y is not None:}}
+{{y=y.split("#newline")}}
+{{for c in y:}}
+{{="==================================="}}
+{{=BR()}}
+{{=XML(c.replace('\n','<br>'),sanitize=True)}}
+{{=BR()}}
+{{pass}}
+{{pass}}
+
+{{=HR()}}
+
+<h6><i>Enter your email to subscribe to future comments</i></h6>
+<form>
+<input name="subscribe" />
+<input type="submit" value="Subscribe" />
+</form>

@@ -1,0 +1,27 @@
+{{extend 'layout.html'}}
+
+<h4>Step 1: Select Prompt Type</h4>
+<select name= "prompt_type" form="prompt_form">
+  <option value="surprise">Surprise Me!</option>
+  <option value="short">Short Topic Prompt</option>
+  <option value="long">Long Topic Prompt</option>
+  <option value="opening">Opening Sentence Prompt</option>
+  <option value="mixed">Multiple Criteria Prompt</option>
+</select>
+
+<h4> </h4>
+
+<h4>Step 2: Write a New Prompt or Generate a Random Prompt</h4>
+<textarea name="prompt_text" form="prompt_form" style="width:250px;height:150px;"></textarea>
+<form id="prompt_form">
+    <input type="submit" value="Add Prompt/Generate"/>
+</form>
+
+<h6><b><font color="blue">Instruction:</font></b><br>
+- To generate a prompt, leave the text box empty<br>
+- To add multiple prompts at once, put each prompt on a different line</h6>
+
+<h5><a href="http://kruschev.pythonanywhere.com/welcome/default/data">View Submitted Writings</a></h5>
+<hr />
+<h4>Delete a Prompt</h4>
+{{=form}}
